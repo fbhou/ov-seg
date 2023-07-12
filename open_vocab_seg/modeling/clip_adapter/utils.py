@@ -4,7 +4,7 @@
 from typing import Tuple
 import numpy as np
 import torch
-import clip
+from third_party.CLIP import clip
 from detectron2.utils.comm import get_local_rank, synchronize
 
 
