@@ -112,3 +112,5 @@ if __name__ == "__main__":
                     break  # esc to quit
     else:
         raise NotImplementedError
+    
+# python demo.py --config-file configs/ovseg_swinB_vitL_demo.yaml --class-names 'Oculus' 'Ukulele'  --input ./resources/demo_samples/sample_03.jpeg --output ./pred --opts MODEL.WEIGHTS ./checkpoints/ovseg_swinbase_vitL14_ft_mpt.pth
