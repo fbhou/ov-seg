@@ -3,6 +3,7 @@
 
 import numpy as np
 import torch
+from PIL import Image
 
 from detectron2.data import MetadataCatalog
 from detectron2.engine.defaults import DefaultPredictor
@@ -121,7 +122,7 @@ class VisualizationDemo(object):
             blank_area = (r[0] == 0)
             pred_mask = r.argmax(dim=0).to('cpu')
             pred_mask[blank_area] = 255
-            pred_mask = np.array(pred_mask, dtype=int)
+            pred_mask = np.uint8(np.array(pred_mask))
 
             vis_output = visualizer.draw_sem_seg(
                 pred_mask
@@ -129,4 +130,4 @@ class VisualizationDemo(object):
         else:
             raise NotImplementedError
 
-        return predictions, vis_output
+        return predictions, vis_output, pred_mask

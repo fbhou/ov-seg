@@ -4,3 +4,4 @@ open_clip_training/src/logs/*
 *.pth
 checkpoints/*
 *.png
+data/*
